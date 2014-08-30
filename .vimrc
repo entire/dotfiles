@@ -72,6 +72,7 @@ nnoremap k gk
 " set custom leader
 let mapleader="," 
 
+:imap <leader>p <c-p>
 
 " make it so we doesnt have to deal with stupid powerline fonts
 let g:airline_theme='powerlineish'
