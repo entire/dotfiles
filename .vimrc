@@ -5,16 +5,22 @@ set t_Co=256
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
+" set it up in the dotfiles
 call vundle#begin('~/dotfiles/.vim/bundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'bling/vim-airline'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/csapprox'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplcache'
+Plugin 'klen/python-mode'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'git@github.com:kien/ctrlp.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -31,7 +37,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " UI stuff
-colorscheme hybrid
+
 set number                " show line numbers
 set ruler
 syntax on
@@ -52,19 +58,31 @@ set tabstop=2             " tab spacing
 set softtabstop=2         " unify
 set shiftwidth=2          " indent/outdent by 2 columns
 set nocursorcolumn
-
-let g:airline_theme = "tomorrow"
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:Powerline_symbols = 'fancy'
+set ignorecase
+set showmatch
+set incsearch             " But do highlight as you type your search.
+set autoread
 
 
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
 
-set term=screen-256color
 set background=dark
-let base16colorspace=256  
 
+" THIS MAKES VIM COLOR PROPER IN TERMINAL
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
+colorscheme hybrid
 
+" setup neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
+" python mode setup
+let g:pymode_folding = 0
