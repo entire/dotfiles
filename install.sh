@@ -21,7 +21,7 @@ echo "...done"
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
- 
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
@@ -32,3 +32,9 @@ done
  
 source ~/.bashrc
 source ~/.vimrc
+
+# download vundle
+echo "Downloading Vundle..."
+git clone https://github.com/gmarik/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim
+echo "...done"
+ 

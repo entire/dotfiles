@@ -22,6 +22,7 @@ Plugin 'klen/python-mode'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'git@github.com:kien/ctrlp.vim'
+Plugin 'jmcantrell/vim-virtualenv'
 
 
 " All of your Plugins must be added before the following line
