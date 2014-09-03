@@ -23,6 +23,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'git@github.com:kien/ctrlp.vim'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 
 " All of your Plugins must be added before the following line
@@ -95,4 +97,8 @@ let g:pymode_folding = 0
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
+
+" Disable folding markdown folding
+let g:vim_markdown_folding_disabled=1
+
 
