@@ -13,7 +13,7 @@ call vundle#begin('~/dotfiles/.vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'w0ng/vim-hybrid'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'godlygeek/csapprox'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
@@ -30,18 +30,17 @@ Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/rope-vim'
-Plugin 'ervandew/supertab'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
+Plugin 'dracula/vim'
+Plugin 'gosukiwi/vim-atom-dark'
+
 
 "git interface
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -62,7 +61,6 @@ filetype plugin indent on    " required
 set number                " show line numbers
 set ruler
 set noswapfile
-syntax on
 set mouse=a
 set smarttab
 set expandtab
@@ -84,7 +82,6 @@ set lazyredraw
 set showmatch
 set incsearch             " But do highlight as you type your search.
 set autoread
-set background=dark
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
@@ -97,22 +94,12 @@ let mapleader=" "
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
 call togglebg#map("<F5>")
-"colorscheme zenburn
-"set guifont=Monaco:h14
+
+" Colorscheme things
+color dracula
+set background=dark
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
-"python with virtualenv support
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUA_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  sys.path.insert(0, project_base_dir)
-  activate_this = os.path.join(project_base_dir,'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 "it would be nice to set tag files by the active virtualenv here
 ":set tags=~/mytags "tags for ctags and taglist
