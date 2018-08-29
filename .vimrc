@@ -1,19 +1,19 @@
 
-set nocompatible              " be iMproved, required
+"set nocompatible              " be iMproved, required
 filetype off                  " required
 set t_Co=256
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/.vim/bundle/Vundle.vim
-
 " set it up in the dotfiles
-call vundle#begin('~/dotfiles/.vim/bundle')
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'junegunn/vim-plug'
+Plugin 'jdsimcoe/abstract.vim'
 Plugin 'bling/vim-airline'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'taketwo/vim-ros'
 Plugin 'godlygeek/csapprox'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
@@ -30,7 +30,6 @@ Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'klen/rope-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
 Plugin 'dracula/vim'
@@ -42,11 +41,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
+call vundle#end()
+filetype plugin indent on
+syntax enable
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -65,7 +63,6 @@ set mouse=a
 set smarttab
 set expandtab
 set shiftround
-set background=dark
 set nohlsearch
 set cul
 set laststatus=2
@@ -85,6 +82,8 @@ set autoread
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
+set foldlevelstart=99
+
 
 "autocomplete
 let g:ycm_autoclose_preview_window_after_completion=1
@@ -96,8 +95,8 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call togglebg#map("<F5>")
 
 " Colorscheme things
-color dracula
-set background=dark
+color abstract
+highlight Normal ctermbg=NONE guifg=lightgrey guibg=black | highlight MatchParen cterm=bold ctermfg=red ctermbg=NONE gui=bold guifg=red guibg=NONE
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
@@ -149,5 +148,4 @@ autocmd FileType python set foldmethod=indent
 nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
-"js stuff"
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+

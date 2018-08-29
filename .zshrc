@@ -101,16 +101,10 @@ antigen bundle heroku
 antigen bundle node
 
 # themes
-antigen theme refined
+# antigen theme refined
 
 # antigen custom  bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # tel antigen that you are done, and ready to apply
 antigen apply
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/kosuke/google-cloud-sdk/path.zsh.inc' ]; then source '/home/kosuke/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/kosuke/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/kosuke/google-cloud-sdk/completion.zsh.inc'; fi
