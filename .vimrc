@@ -3,45 +3,48 @@
 filetype off                  " required
 set t_Co=256
 
-" set it up in the dotfiles
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" setup junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
 
-Plugin 'junegunn/vim-plug'
-Plugin 'jdsimcoe/abstract.vim'
-Plugin 'bling/vim-airline'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'godlygeek/csapprox'
-Plugin 'tpope/vim-surround'
-Plugin 'ervandew/supertab'
-Plugin 'jeaye/color_coded'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'git@github.com:kien/ctrlp.vim'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'jtratner/vim-flavored-markdown'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'nelstrom/vim-markdown-preview'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/Pydiction'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
-Plugin 'jnurmine/Zenburn'
-Plugin 'dracula/vim'
-Plugin 'gosukiwi/vim-atom-dark'
+Plug 'junegunn/vim-plug'
+Plug 'junegunn/seoul256.vim'
+Plug 'jdsimcoe/abstract.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0ng/vim-hybrid'
+Plug 'vim-syntastic/syntastic'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'godlygeek/csapprox'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'jeaye/color_coded'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'jtratner/vim-flavored-markdown'
+Plug 'suan/vim-instant-markdown'
+Plug 'nelstrom/vim-markdown-preview'
+Plug 'nvie/vim-flake8'
+Plug 'vim-scripts/Pydiction'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'jnurmine/Zenburn'
+Plug 'dracula/vim'
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
 
 "git interface
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
-call vundle#end()
+" Initialize plugin system
+call plug#end()
 filetype plugin indent on
 syntax enable
 
@@ -79,6 +82,7 @@ set lazyredraw
 set showmatch
 set incsearch             " But do highlight as you type your search.
 set autoread
+" set paste easy to paste"
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
@@ -95,8 +99,17 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 call togglebg#map("<F5>")
 
 " Colorscheme things
-color abstract
-highlight Normal ctermbg=NONE guifg=lightgrey guibg=black | highlight MatchParen cterm=bold ctermfg=red ctermbg=NONE gui=bold guifg=red guibg=NONE
+"
+" seoul256 (dark):
+"   Range:   233 (darkest) ~ 239 (lightest)
+"   Default: 237
+let g:seoul256_background = 233
+colo seoul256
+
+" 
+let g:airline_theme='lucius'
+
+" NERDTree Things
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
@@ -147,5 +160,8 @@ autocmd FileType python set foldmethod=indent
 "use space to open folds
 nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
+"
 
-
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
