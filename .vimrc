@@ -9,9 +9,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'junegunn/seoul256.vim'
 Plug 'jdsimcoe/abstract.vim'
-Plug 'Raimondi/delimitMate'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-python/python-syntax'
 Plug 'w0ng/vim-hybrid'
 Plug 'vim-syntastic/syntastic'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -37,6 +37,7 @@ Plug 'dracula/vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
 
 "git interface
 Plug 'tpope/vim-fugitive'
@@ -48,15 +49,16 @@ call plug#end()
 filetype plugin indent on
 syntax enable
 
+" Brief help for vim-plug
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"PlugInstall [name ...] [#threads] 	Install plugins
+"PlugUpdate [name ...] [#threads] 	Install or update plugins
+"PlugClean[!] 	                    Remove unused directories (bang version will clean without prompt)
+"PlugUpgrade 	                    Upgrade vim-plug itself
+"PlugStatus 	                    Check the status of plugins
+"PlugDiff 	                        Examine changes from the previous update and the pending changes
+"PlugSnapshot[!] [output path] 	    Generate script for restoring the current snapshot of the plugins
 "
-" Put your non-Plugin stuff after this line
-
 " UI stuff
 
 set number                " show line numbers
@@ -73,7 +75,7 @@ set encoding=utf-8
 set ignorecase            " Make searches case-insensitive.
 set ruler                 " Always show info along bottom.
 set autoindent            " auto-indent
-set ts=2             " tab spacing
+set ts=4             " tab spacing
 set sts=2         " unify
 set sw=2          " indent/outdent by 2 columns
 set nocursorcolumn
@@ -83,6 +85,8 @@ set showmatch
 set incsearch             " But do highlight as you type your search.
 set autoread
 " set paste easy to paste"
+set cindent 
+set shiftwidth=4
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
@@ -91,6 +95,8 @@ set foldlevelstart=99
 
 "autocomplete
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_global_ycm_extra_conf = '/home/kosuke/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+highlight Pmenu ctermfg=2 ctermbg=3 guifg=#ffffff guibg=#000000
 
 "custom keys
 let mapleader=" "
@@ -165,3 +171,10 @@ nnoremap <space> za
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+
+
+"
+" IGNORE section ctrl-p
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|cmake-build-debug\|build'
+"
