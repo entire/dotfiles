@@ -15,9 +15,6 @@ sudo apt install -y \
     cmake \
     curl \
     fping \
-    g++-7 \
-    g++-5 \
-    gcc-5 \
     htop \
     jq \
     libeigen3-dev \
