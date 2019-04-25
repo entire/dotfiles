@@ -23,6 +23,7 @@ echo ""
 # install oh my zsh
 echo ""
 echo "=== Downloading Oh My Zsh ==="
+sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "...done"
 echo ""
