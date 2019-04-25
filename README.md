@@ -3,4 +3,7 @@ dotfiles
 
 my dotfiles
 
-* vimrc
+This installs
+- vim-plug
+- oh my zsh
+- If ubuntu, it installs useful apt packages
