@@ -51,7 +51,7 @@ echo ""
 
 # check to see if this is ubuntu, and then install accordingly
 if [ -f /etc/lsb-release ]; then
-    ./install_apt_packages.sh
+    ./scripts/install_apt_packages.sh
 fi
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
