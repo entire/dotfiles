@@ -97,7 +97,6 @@ source ~/antigen/antigen.zsh
 # bundles
 antigen bundle git
 antigen bundle pip
-antigen bundle heroku
 antigen bundle node
 
 # themes
@@ -105,6 +104,10 @@ antigen bundle node
 
 # antigen custom  bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+# antigen pure theme
+antigen bundle sindresorhus/pure
+
 
 # tel antigen that you are done, and ready to apply
 antigen apply
