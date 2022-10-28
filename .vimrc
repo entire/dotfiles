@@ -7,6 +7,7 @@ set t_Co=256
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
+Plug 'tomlion/vim-solidity'
 Plug 'junegunn/seoul256.vim'
 Plug 'jdsimcoe/abstract.vim'
 Plug 'bling/vim-airline'
@@ -37,6 +38,7 @@ Plug 'gosukiwi/vim-atom-dark'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rust-lang/rust.vim'
 
 "git interface
 Plug 'tpope/vim-fugitive'
