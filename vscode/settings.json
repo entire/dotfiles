@@ -1,0 +1,149 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "todo-tree.highlights.enabled": true,
+    "explorer.openEditors.visible": 0,
+    "workbench.colorTheme": "Xcode (Default Dark)",
+    "window.zoomLevel": 1,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.coverage": true,
+        "**/.pytest_cache": true,
+        "**/.vscode": true,
+        "**/*.pyc": true,
+        "**/htmlcov": true
+    },
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-w>": false,
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-t>": false,
+        "<C-b>": false,
+        "<C-n>": false
+    },
+    "debug.console.fontSize": 13,
+    "markdown.preview.fontSize": 13,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.settings.openDefaultKeybindings": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.acceptSuggestionOnCommitCharacter": true,
+
+    // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+    "editor.acceptSuggestionOnEnter": "on",
+
+    // Controls the delay in ms after which quick suggestions will show up.
+    "editor.quickSuggestionsDelay": 10,
+
+    // Controls if suggestions should automatically show up when typing trigger characters
+    // "editor.suggestOnTriggerCharacters": true,
+
+    // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
+    "editor.tabCompletion": "on",
+
+    // Controls whether sorting favours words that appear close to the cursor
+    "editor.suggest.localityBonus": true,
+
+    // Controls how suggestions are pre-selected when showing the suggest list
+    "editor.suggestSelection": "recentlyUsed",
+
+    // Enable word based suggestions
+    "editor.wordBasedSuggestions": true,
+
+    // Enable parameter hints
+    "editor.parameterHints.enabled": true,
+    "cmake.configureOnOpen": true,
+    
+    "editor.cursorStyle": "line-thin",
+    "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "editor.fontWeight": "500",
+    "editor.lineHeight": 17,
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1.23,
+    "editor.minimap.enabled": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "all",
+    "workbench.activityBar.visible": false,
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.editor.showIcons": false,
+    "window.nativeTabs": true,
+    "editor.tokenColorCustomizations": {
+      "[Xcode Partial (Light)]": {
+        "textMateRules": [
+          {
+            "scope": "comment",
+            "settings": {
+              "foreground": "#536579",
+              "fontStyle": "italic"
+            }
+          }
+        ]
+      },
+      "[Xcode Partial (Dark)]": {
+        "textMateRules": [
+          {
+            "scope": "source",
+            "settings": {
+              "foreground": "#D4D4D4"
+            }
+          },
+          {
+            "scope": "comment",
+            "settings": {
+              "foreground": "#6C7986",
+              "fontStyle": "italic"
+            }
+          }
+        ]
+      },
+      "textMateRules": [
+        {
+          "name": "One Dark italic",
+          "scope": [
+            "comment",
+            "entity.other.attribute-name",
+            "keyword",
+            "markup.underline.link",
+            "storage.modifier",
+            "storage.type",
+            "string.url",
+            "variable.language.super",
+            "variable.language.this"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "name": "One Dark italic reset",
+          "scope": [
+            "keyword.operator",
+            "keyword.other.type",
+            "storage.modifier.import",
+            "storage.modifier.package",
+            "storage.type.built-in",
+            "storage.type.function.arrow",
+            "storage.type.generic",
+            "storage.type.java",
+            "storage.type.primitive"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.automationShell.linux": "",
+    "python.dataScience.alwaysTrustNotebooks": true,
+    "python.dataScience.askForKernelRestart": false,
+    "ycmd.path": "/home/kosuke/dotfiles/modules/ycmd/ycmd/default_settings.json",
+    "C_Cpp.default.intelliSenseMode": "clang-x64",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
+
+  }
