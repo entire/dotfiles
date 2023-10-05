@@ -1,15 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kosuke/.oh-my-zsh"
+export ZSH="/home/july/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -109,60 +102,20 @@ antigen bundle node
 # antigen custom  bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# antigen powerlevel10k theme
-antigen theme romkatv/powerlevel10k
+# pure theme things
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
 
 # tel antigen that you are done, and ready to apply
 antigen apply
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kosuke/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/kosuke/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/kosuke/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/kosuke/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kosuke/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kosuke/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kosuke/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kosuke/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # foundry setup
-export PATH="$PATH:/Users/kosuke/.foundry/bin"
+export PATH="$PATH:/home/kosuke/.foundry/bin"
 
-# python3.9 garbage
-export PATH="$PATH:/Users/kosuke/Library/Python/3.9/bin"
-
-# julia setup
-PATH="/Applications/Julia-1.7.app/Contents/Resources/julia/bin/:${PATH}"
-export PATH
-
-# python3 by default
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/opt/python@3.9/libexec/bin:$PATH
 
 
